@@ -1,0 +1,65 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  glicko2:
+    name: glicko2 / py${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v5
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Ruff
+        run: uv run ruff check packages/glicko2
+
+      - name: Mypy
+        run: >
+          uv run mypy
+          packages/glicko2/__init__.py
+          packages/glicko2/exceptions.py
+          packages/glicko2/engine
+          packages/glicko2/math
+          packages/glicko2/models
+          packages/glicko2/storage
+          packages/glicko2/tournament
+
+      - name: Pytest
+        run: uv run pytest packages/glicko2/tests -q
+
+      - name: Build package
+        run: uv build --package glicko2
+
+  docs:
+    name: docs
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: docs/package-lock.json
+
+      - name: Install docs dependencies
+        working-directory: docs
+        run: npm ci
+
+      - name: Build docs
+        working-directory: docs
+        run: npm run build
