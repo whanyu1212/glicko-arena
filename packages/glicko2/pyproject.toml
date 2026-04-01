@@ -1,0 +1,36 @@
+[project]
+name = "glicko2-py"
+version = "0.1.0"
+description = "Pure Glicko-2 rating system — standalone library"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = []
+keywords = ["glicko2", "glicko", "rating", "elo", "ranking", "matchmaking"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Typing :: Typed",
+]
+
+[project.urls]
+Repository = "https://github.com/whanyu1212/glicko-arena"
+Documentation = "https://github.com/whanyu1212/glicko-arena/tree/main/packages/glicko2"
+Issues = "https://github.com/whanyu1212/glicko-arena/issues"
+
+[project.optional-dependencies]
+postgres = ["psycopg[binary]>=3.1"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/glicko2"]
