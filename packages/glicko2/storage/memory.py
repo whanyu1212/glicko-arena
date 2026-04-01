@@ -34,7 +34,9 @@ class InMemoryStorage(AbstractStorage):
     # -- Periods --
 
     def save_period(self, period: RatingPeriod) -> None:
-        self._periods[period.id] = copy.deepcopy(period)
+        header = copy.deepcopy(period)
+        header.matches = []
+        self._periods[period.id] = header
 
     def load_period(self, period_id: str) -> RatingPeriod | None:
         p = self._periods.get(period_id)

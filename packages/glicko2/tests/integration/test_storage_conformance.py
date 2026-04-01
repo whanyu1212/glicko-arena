@@ -95,6 +95,19 @@ class StorageConformanceTests:
         assert loaded.matches[0].player_id == "alice"
         assert loaded.matches[0].score == pytest.approx(1.0)
 
+    def test_save_period_with_matches_then_append(self, storage: AbstractStorage) -> None:
+        """save_period must persist only the header; pre-attached matches must not leak."""
+        period = RatingPeriod(id="p1")
+        period.matches.append(MatchResult("alice", "bob", 1.0))
+        storage.save_period(period)
+
+        storage.append_match("p1", MatchResult("carol", "dave", 0.5))
+
+        loaded = storage.load_period("p1")
+        assert loaded is not None
+        assert len(loaded.matches) == 1
+        assert loaded.matches[0].player_id == "carol"
+
     def test_append_match_missing_period_raises_storage_error(
         self, storage: AbstractStorage
     ) -> None:
