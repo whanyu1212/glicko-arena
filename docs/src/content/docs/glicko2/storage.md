@@ -61,7 +61,7 @@ Planned for shared team leaderboards where multiple processes need to write rati
 
 ```bash
 # Optional dependency
-pip install "glicko2[postgres]"
+pip install "glicko2-py[postgres]"
 ```
 
 ## Storage contract

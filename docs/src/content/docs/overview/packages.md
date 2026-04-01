@@ -15,7 +15,7 @@ A pure Python implementation of the Glicko-2 rating system.
 - Usable standalone — no dependency on `glicko_eval`
 
 ```bash
-pip install glicko2
+pip install glicko2-py
 ```
 
 [Documentation →](/glicko2/getting-started)
@@ -26,7 +26,7 @@ pip install glicko2
 
 The LLM evaluation harness. Provides task definitions, judge implementations, pipeline wrappers, and the arena orchestration that ties everything together.
 
-- Depends on `glicko2`
+- Depends on `glicko2-py`
 - Per-category rating engines
 - LLM-as-judge scoring
 - CLI for running evaluations and viewing leaderboards

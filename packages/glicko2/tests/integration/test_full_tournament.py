@@ -1,7 +1,6 @@
 """Integration tests — full tournament runs end-to-end."""
 
 import pytest
-
 from glicko2 import MatchResult, RatingEngine, RatingPeriod
 from glicko2.storage.memory import InMemoryStorage
 from glicko2.storage.sqlite import SQLiteStorage

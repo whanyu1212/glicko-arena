@@ -9,9 +9,8 @@ Quick start::
     engine.pool.get_or_create("bob")
 
     period = RatingPeriod(id="round-1")
-    period.add_match(MatchResult("alice", "bob", 1.0))
-    period.add_match(MatchResult("bob", "alice", 0.0))
-    engine.process_period(period)
+    period.add_match(MatchResult("alice", "bob", 1.0))  # one entry per game
+    engine.process_period(period)  # engine derives bob's perspective automatically
 """
 
 from glicko2.engine.rating_engine import RatingEngine

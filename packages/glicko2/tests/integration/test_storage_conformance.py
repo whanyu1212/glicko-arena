@@ -7,7 +7,6 @@ Add a new subclass below for each new backend.
 from datetime import UTC, datetime
 
 import pytest
-
 from glicko2.exceptions import StorageError
 from glicko2.models.match_result import MatchResult
 from glicko2.models.player import Player

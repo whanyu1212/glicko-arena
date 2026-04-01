@@ -10,12 +10,12 @@ import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
 <Tabs>
   <TabItem label="pip">
     ```bash
-    pip install glicko2
+    pip install glicko2-py
     ```
   </TabItem>
   <TabItem label="uv">
     ```bash
-    uv add glicko2
+    uv add glicko2-py
     ```
   </TabItem>
   <TabItem label="uv workspace">

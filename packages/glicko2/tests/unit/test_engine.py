@@ -1,7 +1,6 @@
 """Unit tests for RatingEngine and PlayerPool."""
 
 import pytest
-
 from glicko2 import MatchResult, RatingEngine, RatingPeriod
 from glicko2.engine.player_pool import PlayerPool
 from glicko2.exceptions import InvalidMatchError, UnknownPlayerError

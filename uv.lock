@@ -5,7 +5,7 @@ requires-python = ">=3.11"
 [manifest]
 members = [
     "glicko-arena",
-    "glicko2",
+    "glicko2-py",
 ]
 
 [[package]]
@@ -152,6 +152,9 @@ wheels = [
 name = "glicko-arena"
 version = "0.1.0"
 source = { virtual = "." }
+dependencies = [
+    { name = "glicko2-py" },
+]
 
 [package.dev-dependencies]
 dev = [
@@ -163,6 +166,7 @@ dev = [
 ]
 
 [package.metadata]
+requires-dist = [{ name = "glicko2-py", editable = "packages/glicko2" }]
 
 [package.metadata.requires-dev]
 dev = [
@@ -174,7 +178,7 @@ dev = [
 ]
 
 [[package]]
-name = "glicko2"
+name = "glicko2-py"
 version = "0.1.0"
 source = { editable = "packages/glicko2" }
 

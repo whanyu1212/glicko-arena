@@ -1,7 +1,6 @@
 """Unit tests for inflation / drift utilities."""
 
 import pytest
-
 from glicko2.engine.drift import detect_inflation, normalize_ratings, phi_floor, soft_reset
 from glicko2.engine.player_pool import PlayerPool
 from glicko2.models.player import Player

@@ -3,6 +3,10 @@ name = "glicko-arena"
 version = "0.1.0"
 description = "Glicko-2 powered arena evaluation monorepo"
 requires-python = ">=3.11"
+dependencies = ["glicko2-py"]
+
+[tool.uv.sources]
+glicko2-py = { workspace = true }
 
 [tool.uv.workspace]
 members = ["packages/*"]

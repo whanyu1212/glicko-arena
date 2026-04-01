@@ -1,7 +1,7 @@
 """PostgresStorage — shared team leaderboards via psycopg3.
 
 Install the optional dependency:
-    pip install "glicko2[postgres]"   # i.e. psycopg[binary]>=3.1
+    pip install "glicko2-py[postgres]"   # i.e. psycopg[binary]>=3.1
 """
 
 from __future__ import annotations
@@ -27,7 +27,7 @@ class PostgresStorage(AbstractStorage):
         except ImportError as exc:
             raise StorageError(
                 "PostgresStorage requires psycopg. "
-                'Install it with: pip install "glicko2[postgres]"'
+                'Install it with: pip install "glicko2-py[postgres]"'
             ) from exc
 
         import psycopg

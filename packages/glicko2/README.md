@@ -7,9 +7,9 @@ Zero dependencies. Fully typed. Usable as a standalone library or as the rating 
 ## Installation
 
 ```bash
-pip install glicko2
+pip install glicko2-py
 # with PostgreSQL support:
-pip install "glicko2[postgres]"
+pip install "glicko2-py[postgres]"
 ```
 
 ## Quick start

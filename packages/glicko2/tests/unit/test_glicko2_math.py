@@ -7,7 +7,6 @@ http://www.glicko.net/glicko/glicko2.pdf
 import math
 
 import pytest
-
 from glicko2.math.algorithm import E, g, update_rating
 from glicko2.math.conversions import mu_to_rating, phi_to_rd, rating_to_mu, rd_to_phi
 
